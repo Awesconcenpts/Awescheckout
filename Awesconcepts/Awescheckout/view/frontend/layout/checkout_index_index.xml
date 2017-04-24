@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="awescheckout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <head>
+    <css src="Awesconcepts_Awescheckout::css/awescheckout.css" defer='defer'/>
+  </head>
+  <body>
+    <referenceContainer name="page.wrapper">
+      <arguments>
+        <argument name="css_class" xsi:type="string">awestep-wrapper</argument>
+      </arguments>
+    </referenceContainer>
+    <referenceContainer name="content">
+      <block class="Magento\Framework\View\Element\Text" name="exampleScript" after="checkout.root">
+        <arguments>
+          <argument name="text" xsi:type="string">
+            <![CDATA[<script type="text/javascript">
+              var timerSaveShippingAddress = null;
+              requirejs(['Awesconcepts_Awescheckout/js/awestep'],function(awestep){
+              var config = {"defaultPaymentMethod":"checkmo","defaultShippingMethod":"freeshipping_freeshipping"};
+              awestep(config);
+              });
+              </script>]]>
+          </argument>
+        </arguments>
+      </block>
+      <referenceBlock name="checkout.root" cacheable="false">
+        <arguments>
+          <argument name="jsLayout" xsi:type="array">
+            <item name="components" xsi:type="array">
+              <item name="checkout" xsi:type="array">
+                <item name="children" xsi:type="array">
+                  <item name="steps" xsi:type="array">
+                    <item name="children" xsi:type="array">
+                      <item name="shipping-step" xsi:type="array">
+                        <item name="children" xsi:type="array">
+                          <item name="shippingAddress" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                              <item name="shipping-address-fieldset" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                  <!-- The following items override configuration of corresponding address attributes -->
+                                  <item name="postcode" xsi:type="array">
+                                    <!-- post-code field has custom UI component -->
+                                    <item name="sortOrder" xsi:type="string">81</item>
+                                  </item>
+                                  <item name="company" xsi:type="array">
+                                    <item name="sortOrder" xsi:type="string">200</item>
+                                  </item>
+                                  <item name="country_id" xsi:type="array">
+                                    <item name="sortOrder" xsi:type="string">71</item>
+                                  </item>
+                                </item>
+                              </item>
+                              <item name="shippingAdditional" xsi:type="array">
+                                <item name="component" xsi:type="string">uiComponent</item>
+                                <item name="displayArea" xsi:type="string">shippingAdditional</item>
+                                <item name="children" xsi:type="array">
+                                  <item name="delivery_date" xsi:type="array">
+                                    <item name="component" xsi:type="string">Awesconcepts_Awescheckout/js/awestep/delivery/delivery-block</item>
+                                  </item>
+                                </item>
+                              </item>
+                            </item>
+                          </item>
+                        </item>
+                      </item>
+                      <item name="billing-step" xsi:type="array">
+                        <item name="children" xsi:type="array">
+                          <item name="payment" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                              <!-- merge your payment methods here -->
+                              <item name="afterMethods" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                  <!-- merge additional data after payment methods here -->
+                                  <item name="discount" xsi:type="array">
+                                    <item name="config" xsi:type="array">
+                                      <item name="componentDisabled" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                  <item name="place-order-sm" xsi:type="array">
+                                    <item name="component" xsi:type="string">uiComponent</item>
+                                    <item name="config" xsi:type="array">
+                                      <item name="template" xsi:type="string">Awesconcepts_Awescheckout/awestep/form/element/order-btn-sm</item>
+                                    </item>
+                                  </item>
+                                </item>
+                              </item>
+                            </item>
+                          </item>
+                        </item>
+                      </item>
+                    </item>
+                  </item>
+                  <item name="sidebar" xsi:type="array">
+                    <item name="children" xsi:type="array">
+                      <item name="summary" xsi:type="array">
+                        <item name="sortOrder" xsi:type="string">1</item>
+                        <item name="children" xsi:type="array">
+                          <item name="cart_items" xsi:type="array">
+                            <item name="sortOrder" xsi:type="string">1</item>
+                          </item>
+                          <item name="totals" xsi:type="array">
+                            <item name="sortOrder" xsi:type="string">2</item>
+                          </item>
+                        </item>
+                      </item>
+                      <item name="discount" xsi:type="array">
+                        <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                        <item name="displayArea" xsi:type="string">summary</item>
+                        <item name="children" xsi:type="array">
+                          <item name="errors" xsi:type="array">
+                            <item name="sortOrder" xsi:type="string">53</item>
+                            <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                            <item name="displayArea" xsi:type="string">messages</item>
+                          </item>
+                        </item>
+                      </item>
+                      <item name="subscribe" xsi:type="array">
+                        <item name="component" xsi:type="string">Awesconcepts_Awescheckout/js/awestep/form/element/subscribe</item>
+                        <item name="displayArea" xsi:type="string">summary</item>
+                        <item name="dataScope" xsi:type="string">shippingAddress.subscribe</item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="visible" xsi:type="boolean">true</item>
+                        <item name="id" xsi:type="string">subscribe</item>
+                        <item name="sortOrder" xsi:type="string">54</item>
+                        <item name="validation" xsi:type="array"></item>
+                        <item name="config" xsi:type="array">
+                          <item name="prefer" xsi:type="string">checkbox</item>
+                          <item name="description" xsi:type="string" translate="true">Sign Up for Our Newsletter</item>
+                          <item name="value" xsi:type="string">1</item>
+                        </item>
+                      </item>
+                      <item name="place-order-lg" xsi:type="array">
+                        <item name="component" xsi:type="string">uiComponent</item>
+                        <item name="sortOrder" xsi:type="string">57</item>
+                        <item name="displayArea" xsi:type="string">summary</item>
+                        <item name="config" xsi:type="array">
+                          <item name="template" xsi:type="string">Awesconcepts_Awescheckout/awestep/form/element/order-btn-lg</item>
+                        </item>
+                      </item>
+                    </item>
+                  </item>
+                </item>
+              </item>
+            </item>
+          </argument>
+        </arguments>
+      </referenceBlock>
+    </referenceContainer>
+  </body>
+</page>

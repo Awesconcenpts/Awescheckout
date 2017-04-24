@@ -1,0 +1,41 @@
+<!--
+ * Awesconcepts.
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Awesconcepts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Awesconcepts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Awesconcepts
+ * @package    Awesconcepts_Awestep
+ * @author     Awesconcepts Team
+ * @copyright  Copyright (c) 2014-2017 Awesconcepts. ( http://awesconcepts.com )
+-->
+<div id="delivery-date">
+    <strong><?php echo __('Delivery Date') ?></strong>
+    <span class="price"><?=$block->getDeliveryDate() ?></span>
+</div>
+<div id="delivery-comment">
+    <strong><?php echo __('Comment') ?>:</strong>
+    <br/>
+    <span class="price"><?=$block->getDeliveryComment() ?></span>
+</div>
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function($) {
+            var element = $('#delivery-date').detach();
+            $('.box-order-shipping-method').append(element);
+            var element = $('#delivery-comment').detach();
+            $('.box-order-shipping-method').append(element);
+        }
+    );
+</script>

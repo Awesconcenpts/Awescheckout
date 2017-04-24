@@ -1,0 +1,36 @@
+<!--
+ * Awesconcepts.
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Awesconcepts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Awesconcepts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Awesconcepts
+ * @package    Awesconcepts_Awestep
+ * @author     Awesconcepts Team
+ * @copyright  Copyright (c) 2014-2017 Awesconcepts. ( http://awesconcepts.com )
+-->
+<div class="shipping-address-item" data-bind="click: selectAddress,css: isSelected() ? 'selected-item' : 'not-selected-item'">
+    <!-- ko text: address().prefix --><!-- /ko --> <!-- ko text: address().firstname --><!-- /ko -->
+    <!-- ko text: address().lastname --><!-- /ko --> <!-- ko text: address().suffix --><!-- /ko --><br/>
+    <!-- ko text: address().street --><!-- /ko --><br/>
+    <!-- ko text: address().city --><!-- /ko -->, <!-- ko text: address().region --><!-- /ko --> <!-- ko text: address().postcode --><!-- /ko --><br/>
+    <!-- ko text: getCountryName(address().countryId) --><!-- /ko --><br/>
+    <!-- ko text: address().telephone --><!-- /ko --><br/>
+    <!-- ko if: (address().isEditable()) -->
+    <button type="button"
+            class="action edit-address-link"
+            data-bind="click: editAddress, visible: address().isEditable()">
+        <span data-bind="i18n: 'Edit'"></span>
+    </button>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,561 @@
+/*
+ * Awesconcepts.
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Awesconcepts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Awesconcepts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Awesconcepts
+ * @package    Awesconcepts_Awestep
+ * @author     Awesconcepts Team
+ * @copyright  Copyright (c) 2014-2017 Awesconcepts. ( http://awesconcepts.com )
+*/
+*{
+		 -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+/* test */
+.opc-wrapper .step-content{
+	margin: 0px!important;
+}
+#opc-shipping_method, #shipping, #payment {
+    display: block!important;
+    float: left !important;
+    padding: 20px !important;
+    box-sizing: border-box;
+	    border: 1px solid #ffffff;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.18);
+    transition: all .2s ease-in-out;
+    margin-left: 20px;
+}
+
+#payment{
+    display: block !important;
+    margin-top: 20px ;
+}
+
+
+.opc-progress-bar, #shipping-method-buttons-container, #billing-address-container-clone .actions-toolbar, #billing-address-container-clone .field-select-billing {
+    display: none !important;
+}
+
+.table-checkout-shipping-method {
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+#awescheckout-poc-lg button,#awescheckout-poc-sm button {
+    width: 100% !important;
+    height: 80px !important;
+    font-size: 2em;
+}
+#awescheckout-poc-lg{margin-top: 20px}
+.payment-method .actions-toolbar {
+    display: none !important;
+}
+
+.minicart-items, .payment-option-content {
+    display: block !important;
+}
+
+.opc-sidebar {
+    margin-top: 0
+}
+
+#shipping .step-title:before{
+    content: '1';
+}
+
+#opc-shipping_method .step-title:before{
+    content: '2';
+}
+
+#payment .step-title:before{
+    content: '3';
+}
+.opc-block-summary > .title:before{
+    content: '\2713';
+}
+
+.opc-sidebar{margin-top: 0px!important;}
+.checkout-payment-method .payment-option-title,.payment-option-content{
+    padding-left: 0px!important;
+}
+#awescheckout-poc-lg .action.primary{font-size: 35px!important;}
+
+.step-title:before,.opc-block-summary > .title:before{
+    background-color: #ff5c5c !important;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-left: 0;
+    font-family: 'Roboto',sans-serif;
+}
+
+
+.checkout-payment-method .payment-method-content{
+    width: 100%;
+    padding: 0!important;
+}
+.opc-wrapper .form-login{
+    padding-bottom: 0px!important;
+    margin-bottom: 0px!important;
+}
+.fieldset > .field, .fieldset > .fields > .field{
+    margin-bottom: 10px!important;
+	float:left;
+	    width: 100%;
+}
+.fieldset > .field .label,
+.fieldset > .field .control,
+.fieldset > .fields > .field .label,
+.fieldset > .fields > .field .control
+{
+width:100%!important;
+	
+}
+.field .control input {
+    margin-right: 0px!important;
+    width: 100%!important;
+}
+.field .label{
+	text-align: left!important;
+}
+div[name$=".firstname"], div[name$=".lastname"],div[name$=".city"],div[name$=".postcode"],div[name$=".telephone"],div[name$=".company"]{
+    width: 50%!important;
+    float: left;
+}
+input[name="firstname"],
+input[name="telephone"],
+input[name="city"]{
+	border-right: 0px!important;
+	
+}
+div[name$=".postcode"] .message.warning{
+    width: 160%!important;
+    margin-left: -100%!important;
+}
+
+.checkout-payment-method .ccard .number .input-text{
+    width: 100%;
+}
+.checkout-payment-method .ccard.fieldset > .field .fields.group.group-2 .field{
+    width: 50%!important;
+}
+.checkout-payment-method .ccard .month .select,.checkout-payment-method .ccard .year .select{
+    width: 100%!important;
+}
+
+
+.opc-wrapper .shipping-address-item{
+    width: 100%;
+    padding:10px;
+}
+.opc-wrapper .edit-address-link{
+    margin: 0;
+}
+.checkout-index-index .modal-popup .form-shipping-address{
+    width: 100%!important;
+    max-width: 100%!important;
+}
+.opc-wrapper .action-select-shipping-item{
+    display: none;
+}
+.opc-wrapper .shipping-address-item.selected-item{
+    background-color: whitesmoke;
+}
+.opc-wrapper .shipping-address-item:hover{
+    border-color: #ff5501;
+    background-color: whitesmoke;
+}
+.table-checkout-shipping-method tbody td{
+    padding: 10px;
+}
+.checkout-payment-method .payment-method-title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.checkout-payment-method .billing-address-same-as-shipping-block{
+    padding-left: 2px;
+}
+.opc-wrapper .form-login{
+    border: none;
+}
+.opc-wrapper .form-shipping-address{
+    margin-top: 10px;
+}
+.iwd-grand-total-wrapper { display: none;}
+.grand.totals {
+    font: lighter 24px 'Open Sans';
+    text-transform: uppercase;
+    margin: 17px 0 33px 0;
+}
+.grand.totals  .amount{
+    font: bolder 24px 'Open Sans';
+    border: none;
+}
+.opc-grand-totals {
+    padding-left: 0;
+    padding-bottom: 20px;
+}
+.opc-grand-totals li{
+    list-style: none;
+}
+.opc-grand-totals .mark{
+    width: auto;
+    display: inline-block;
+    float: left;
+}
+.opc-grand-totals .amount{
+    width: auto;
+    display: inline-block;
+    float: right;
+}
+.gift-item-block{
+    margin-bottom: 20px!important;
+}
+.gift-options{
+    margin: 0!important;
+}
+.gift-item-block .title{
+    padding: 0!important;
+}
+.admin__field-option{margin-top: 20px}
+.gift-options-title{display: none!important;}
+.cart-gift-item{clear: both;padding-top: 20px}
+#block-discount-heading{display: none;}
+
+.checkout-payment-method .payment-option-title .action-toggle:after,.opc-block-summary .items-in-cart > .title:after{display: none}
+
+#shipping{
+		margin-bottom: 20px;
+}
+@media screen and (max-width: 400px) {
+    .opc-wrapper{
+        width: 100%!important;
+    }
+    .opc-sidebar {
+        width: 100%!important;
+    }
+    #opc-shipping_method, #shipping, #payment {
+        width: 100% !important;
+        margin-left: 0px;
+    }
+    .opc-wrapper .form-login, .opc-wrapper .form-shipping-address, .opc-wrapper .methods-shipping{
+        background: none;
+    }
+    .opc-block-summary {
+        padding: 15px;
+        width: 90%;
+    }
+    #awescheckout-poc-sm{display: block}
+    #awescheckout-poc-lg{display: none}
+	#discount-form {
+    padding: 10px 40px 10px 20px;
+	}
+	.subscribers{
+		margin-top: 10px;
+		float: left;
+		padding: 0px 20px
+	}
+	.checkout-payment-method .checkout-billing-address {
+    padding: 0 15px;
+}
+
+
+}
+@media screen and (min-width: 401px) and (max-width: 720px) {
+    .opc-wrapper{
+        width: 100%!important;
+    }
+    .opc-sidebar {
+        width: 100%!important;
+    }
+    #opc-shipping_method, #shipping, #payment {
+        width: 100% !important;
+        margin-left: 0px;
+    }
+
+    .opc-wrapper .form-login, .opc-wrapper .form-shipping-address, .opc-wrapper .methods-shipping{
+        background: none;
+    }
+    .opc-block-summary {
+        padding: 15px;
+        width: 90%;
+    }
+    #awescheckout-poc-sm{display: block}
+    #awescheckout-poc-lg{display: none}
+	#discount-form {
+    padding: 10px 40px 10px 20px;
+}
+	.subscribers{
+		margin-top: 10px;
+		float: left;
+		padding: 0px 20px
+	}
+	.checkout-payment-method .checkout-billing-address {
+    padding: 0 15px;
+}
+
+}
+
+@media screen and (min-width: 721px) and (max-width: 1280px) {
+    .opc-wrapper{
+        width: 100%!important;
+    }
+    .opc-sidebar {
+        width: 100%!important;
+    }
+    #opc-shipping_method, #shipping, #payment {
+        width: 47% !important;
+    }
+
+    #awescheckout-poc-sm{display: none}
+    #awescheckout-poc-lg{display: block}
+	#discount-form {
+    padding: 10px 40px 10px 20px;
+}
+	.subscribers{
+		margin-top: 10px;
+		float: left;
+		padding: 0px 20px
+	}
+	.checkout-payment-method .checkout-billing-address {
+    padding: 0 15px;
+}
+
+    .modal-popup .modal-inner-wrap{width: 30%!important;}
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    #opc-shipping_method, #shipping, #payment {
+        width: 47% !important;
+    }
+    #awescheckout-poc-sm{display: none}
+    #awescheckout-poc-lg{display: block}
+    .modal-popup .modal-inner-wrap{width: 30%!important;}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    #opc-shipping_method, #shipping, #payment {
+        width: 47% !important;
+    }
+    #awescheckout-poc-sm{display: none}
+    #awescheckout-poc-lg{display: block}
+    .modal-popup .modal-inner-wrap{width: 30%!important;}
+}
+
+@media screen and (min-width: 1921px) {
+    #opc-shipping_method, #shipping, #payment {
+        width: 47% !important;
+    }
+    #awescheckout-poc-sm{display: none}
+    #awescheckout-poc-lg{display: block}
+    .modal-popup .modal-inner-wrap{width: 30%!important;}
+}
+
+/* material */
+/*--------------- Radio style ---------------*/
+@-webkit-keyframes
+click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+}
+    100% {
+        width: 200px;
+        height: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0.0;
+    }
+}
+@-moz-keyframes
+click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+}
+    100% {
+        width: 200px;
+        height: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0.0;
+    }
+}
+@-o-keyframes
+click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+}
+    100% {
+        width: 200px;
+        height: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0.0;
+    }
+}
+@keyframes
+click-wave { 0% {
+    width: 15px;
+    height: 15px;
+    opacity: 0.35;
+    position: relative;
+}
+    100% {
+        width: 40px;
+        height: 40px;
+        margin-left: -15px;
+        margin-top: -15px;
+        opacity: 0.0;
+    }
+}
+
+.radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+	top: 3px;
+
+}
+.checkout-shipping-method .radio{
+	top: 0px!important;
+	    margin: 2px!important;
+	float: left;
+}
+
+.radio:hover { background: #9faab7; }
+
+.radio:checked { background: #ff5c5c; }
+
+.radio:checked::before {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.radio:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #ff5c5c;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.radio:focus{
+    box-shadow: 0 0 3px 1px #ff5c5c!important;
+}
+.radio { border-radius: 50%; }
+
+.radio::after { border-radius: 50%; }
+.action.primary.checkout{
+	    background: #ff5c5c;
+    border: 1px solid #ff5c5c;
+}
+.opc-wrapper .actions-toolbar{
+	margin: 0px!important;
+}
+#discount-form,
+#discount-form .payment-option-inner,
+#discount-form .label,
+.discount-code{
+	float: left;
+	width: 100%;
+	height: auto;
+	
+	
+}
+#discount-form{
+	padding: 10px 0px;
+}
+#discount-form .label{
+	padding-bottom: 10px;
+}
+#discount-form .payment-option-inner{
+	width: 74%;
+	float: left;
+	height: auto;
+}
+#discount-form .field input{
+	padding: 22px 10px 22px 10px;
+}
+#discount-form  .actions-toolbar{
+	width: 20%;
+	padding-left: 3%;
+	float: left;
+	height: auto;
+	margin: 29px 0px 0px 0px;
+}
+.opc-block-summary .table-totals tr.totals{
+	border-top: 1px solid #c7c7c7;
+	
+}
+.opc-block-summary .table-totals tr.grand.totals td,
+.opc-block-summary .table-totals tr.grand.totals th
+{
+    padding: 0px 4px 8px 4px!important;
+}
+.opc-block-summary .table-totals tr.grand.totals strong
+{
+    font-weight: 400!important;
+	font-size: 14px!important;
+	
+}
+#discount-form .actions-toolbar .primary{
+    width: 100%;
+}
+.field-tooltip {
+    right: 7px!important;
+}
+
+
+
+
+
+
+
